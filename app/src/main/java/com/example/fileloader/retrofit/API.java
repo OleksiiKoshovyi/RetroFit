@@ -5,6 +5,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface API {
-    @GET("/")
+    @GET("?i=onions")
     public Call<DataModel> getRecipe();
 }

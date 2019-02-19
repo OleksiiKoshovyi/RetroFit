@@ -8,6 +8,5 @@ public class AppAplication extends Application {
     public void onCreate() {
         super.onCreate();
         //Toast.makeText(getBaseContext(),"There",Toast.LENGTH_SHORT).show();
-
     }
 }
