@@ -6,5 +6,5 @@ import retrofit2.http.GET;
 
 public interface API {
     @GET("/")
-    public Call getRecipe();
+    public Call<DataModel> getRecipe();
 }
