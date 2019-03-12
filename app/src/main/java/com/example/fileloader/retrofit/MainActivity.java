@@ -13,11 +13,23 @@ public class MainActivity extends AppCompatActivity implements Callback<DataMode
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getRecipe();
     }
 
     private void getRecipe(){
         Call<DataModel> call = Service.getApi().getRecipe();
-        call.enqueue(this);
+        call.enqueue(new Callback<DataModel>() {
+            @Override
+            public void onResponse(Call<DataModel> call, Response<DataModel> response) {
+                response.body().toString();
+            }
+
+            @Override
+            public void onFailure(Call<DataModel> call, Throwable t) {
+                t.getMessage();
+            }
+        });
     }
 
 
@@ -31,3 +43,6 @@ public class MainActivity extends AppCompatActivity implements Callback<DataMode
 
     }
 }
+/*
+    Не трожьте этот проект
+* */

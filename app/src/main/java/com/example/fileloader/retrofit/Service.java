@@ -5,12 +5,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Service {
 
-    public static API getApi(){
+    public static Api getApi(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://www.recipepuppy.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        API api = retrofit.create(API.class);
+        Api api = retrofit.create(Api.class);
         return  api;
     }
 }
